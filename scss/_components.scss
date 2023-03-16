@@ -1,0 +1,265 @@
+// style haei k jahaye dg ham azashun estefade mikonim
+.hamburger-menu{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left: 2%;
+    top: 12%;
+    z-index: 300;
+    @media (max-width:800px) {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .menu{
+        @extend %fullspace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &-line{
+            width: 100%;
+            height: 4px;
+            background-color: $color-primary;
+            transition: all .5s .5s ;
+            transform-origin: right;
+            @media (max-width:800px) {
+                height: 3px;
+            }
+        
+        }
+    }
+}
+
+.logo{
+    @include flexlayout;
+    font-size: 70px;
+    color: $color-primary;
+    width: 110px;
+    height: 110px;
+    border: 3px solid $color-primary;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-decoration: none;
+
+    @media (max-width:1000px) {
+        font-size:50px;
+        width: 90px;
+        height: 90px;
+    }
+    @media (max-width:800px) {
+        font-size:30px;
+        width: 70px;
+        height: 70px;
+    }
+    @media (max-width:500px) {
+        font-size:20px;
+        width: 40px;
+        height: 40px;
+    }
+
+}
+.main-name{
+    @include textstyle ;
+    font-family: "nunito";
+    font-size: 50px;
+    color: $color-secondary;
+
+    @media (max-width:1100px) {
+        font-size:40px;
+    }
+    @media (max-width:1000px) {
+        font-size:35px;
+    }
+    @media (max-width:900px) {
+        font-size:30px;
+    }
+    @media (max-width:800px) {
+        font-size:25px;
+    }
+    @media (max-width:700px) {
+        font-size:20px;
+    }
+    @media (max-width:500px) {
+        font-size:13px;
+    }
+
+}
+.sub-name{
+    @include textstyle ;
+    font-family: "Josefin Sans";
+    font-size: 18px;
+    color: $color-secondary;
+    text-align: center;
+    @media (max-width:500px) {
+        font-size:14px;
+    }
+}
+.main-heading{
+    font-family: "dancing script";
+    font-size: 100px;
+    font-weight: 300;
+    color: $color-primary;
+    margin-bottom: 40px;
+
+    @media (max-width:1600px) {
+        font-size:90px;
+    }
+    @media (max-width:1000px) {
+        font-size:80px;
+    }
+    @media (max-width:500px) {
+        font-size:40px;
+    }
+
+
+}
+.sub-heading{
+    font-family: "Josefin Sans";
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-secondary;
+    margin-bottom: 80px;
+
+    @media (max-width:1600px) {
+        font-size:50px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    @media (max-width:1300px) {
+        font-size:40px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    @media (max-width:1000px) {
+        font-size:30px;
+    }
+    @media (max-width:500px) {
+        font-size:25px;
+    }
+}
+.main-btn{
+    width: 170px;
+    height: 45px;
+    font-family: "Josefin Sans" ;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-primary;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+    transition: all .4s ;
+
+    &:hover{
+        background-color: $color-primary;
+        color: $color-dark;
+    }    
+    @media (max-width:500px) {
+        font-size:10px;
+        width: 150px;
+        height: 45;
+    }
+
+    // @media (max-width:800px) {
+    //     width: 150px;
+    //     height: 35px;
+    //     font-size: 12px;
+    // }
+
+}
+
+.card{
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+    &:hover .card-overlay{
+        left: 0px;
+    }
+
+    &-overlay{
+        @extend %fullspace ;
+        @include flexlayout ;
+        flex-direction: column;
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        background-color: rgba($color-primary, .6);
+        color: $color-white ;
+        z-index: 10;
+        transition: left 1s ;
+
+        &-heading{
+            @include textstyle ;
+            font-family: "dancing script" ;
+            font-size: 50px;
+            @media (max-width:900px) {
+                font-size: 35px;
+            }
+            @media (max-width:600px) {
+                font-size:25px;
+            }
+            @media (max-width:500px) {
+                font-size:15px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-paragraph{
+            @include textstyle ;
+            font-family: "nunito" ;
+            font-size: 30px;
+            margin-bottom: 30px ;
+            @media (max-width:900px) {
+                font-size: 20px;
+            }
+            @media (max-width:1000px) {
+                font-size:15px;
+            }
+            @media (max-width:500px) {
+                font-size:10px;
+            }
+        }
+
+        &-btn{
+            width: 150px ;
+            height: 40px ;
+            color: $color-primary ;
+            background-color: $color-white ;
+            font-family: "Josefin Sans" ;
+            font-size: 20px ;
+            font-weight: 600;
+            border: 1px solid $color-primary ;
+            border-radius: 30px;
+            outline: none ;
+            cursor: pointer;
+
+            @media (max-width:900px) {
+                font-size: 12px;
+                width: 130px;
+                height: 30px;
+            }
+            @media (max-width:1000px) {
+                font-size:10px;
+                width: 100px ;
+            }
+            @media (max-width:500px) {
+                font-size:10px;
+                width: 90px;
+            }
+
+        }
+
+
+    }
+
+    &-img{
+        @extend %fullspace ;
+        object-fit: cover;
+        opacity: .5;
+    }
+}
